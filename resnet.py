@@ -13,7 +13,7 @@ transform = transforms.Compose([transforms.ToTensor(),
 train = torchvision.datasets.CIFAR10(".data/",True,transform=transform)
 test = torchvision.datasets.CIFAR10(".data/",False,transform=transform)
 
-train,test = DataLoader(train,35,True),DataLoader(test,35,True)
+train,test = DataLoader(train,100,True),DataLoader(test,100,True)
 
 class block(nn.Module):
     def __init__(self,in_channel,out_channel,stride=1,downsample=None):
