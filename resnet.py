@@ -7,8 +7,7 @@ from torch.utils.data import DataLoader
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-transform = transforms.Compose([transforms.Resize((224,224)),
-                                transforms.ToTensor(),
+transform = transforms.Compose([transforms.ToTensor(),
                                 transforms.Normalize((0.5,0.5,0.5),(0.5,0.5,0.5))])
 
 train = torchvision.datasets.CIFAR10(".data/",True,transform=transform)
