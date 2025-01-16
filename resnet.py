@@ -52,7 +52,7 @@ class ResNet(nn.Module):
         self.in_channels = 64
 
         self.conv1 = nn.Conv2d(input_channels,64,kernel_size=7,stride=2)
-        self.maxpool = nn.MaxPool2d(kernel_size=3,stride=2)
+        self.maxpool = nn.MaxPool2d(kernel_size=3,stride=2,padding=1)
 
         self.layer1 = self.make_layer(layers[0],64,1)
         self.layer2 = self.make_layer(layers[1],128,2)
